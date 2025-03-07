@@ -72,6 +72,15 @@ h1 {
     border-radius: 5px;
 }
 
+.photo-container {
+    margin-top: 20px;
+}
+
+.photo-container img {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
 .controls {
     margin-top: 30px;
 }
