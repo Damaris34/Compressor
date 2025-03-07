@@ -9,17 +9,16 @@
 <body>
     <div class="container">
         <h1>Monitoramento de Equipamento</h1>
-        <div class="info">
-            <p>Data/Horário: <span id="datetime"></span></p>
-            <p>Pressão: <span id="pressure">0</span> bar</p>
-            <p>Temperatura: <span id="temperature">0</span> °C</p>
-            <p>Compressor: <span id="compressor-status">Desligado</span></p>
-            <p>Responsável: <span id="responsible">Não definido</span></p>
-        </div>
-        <div class="controls">
-            <label for="compressor-check">Verificar Compressor:</label>
-            <input type="checkbox" id="compressor-check">
-            <button onclick="updateCompressorStatus()">Atualizar Status</button>
+        <div class="report">
+            <p><strong>Data/Horário:</strong> <span id="datetime">07/03/2025, 15:16:57</span></p>
+            <p><strong>Temperatura:</strong> <span id="temperature">29</span> °C</p>
+            <p><strong>Compressor:</strong> <span id="compressor-status">Desligado</span></p>
+            <p><strong>Responsável:</strong> <span id="responsible">Não definido</span></p>
+            <div class="controls">
+                <label for="compressor-check">Verificar Compressor:</label>
+                <input type="checkbox" id="compressor-check">
+                <button onclick="updateCompressorStatus()">Atualizar Status</button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
