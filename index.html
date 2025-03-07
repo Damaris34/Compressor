@@ -11,96 +11,44 @@
         <h1>Monitoramento de Equipamento</h1>
         <div class="report">
             <p><strong>Data/Horário:</strong> <span id="datetime">07/03/2025, 15:16:57</span></p>
-
-            <!-- Compressores -->
-            <h2>Compressores</h2>
-            <div class="equipment-group">
-                <div class="equipment">
-                    <strong>Compressor 1:</strong>
-                    <div class="input-group">
-                        <label>Pressão (bar):</label>
-                        <input type="number" class="pressure">
-                    </div>
-                    <div class="input-group">
-                        <label>Temperatura (°C):</label>
-                        <input type="number" class="temperature">
-                    </div>
-                    <div class="input-group">
-                        <label>Estado:</label>
-                        <select class="operation-select">
-                            <option value="parado">Parado</option>
-                            <option value="em operação">Em Operação</option>
-                        </select>
-                    </div>
-                </div>
-                <!-- Repita o bloco acima para os outros compressores -->
-                <div class="equipment">
-                    <strong>Compressor 2:</strong>
-                    <div class="input-group">
-                        <label>Pressão (bar):</label>
-                        <input type="number" class="pressure">
-                    </div>
-                    <div class="input-group">
-                        <label>Temperatura (°C):</label>
-                        <input type="number" class="temperature">
-                    </div>
-                    <div class="input-group">
-                        <label>Estado:</label>
-                        <select class="operation-select">
-                            <option value="parado">Parado</option>
-                            <option value="em operação">Em Operação</option>
-                        </select>
-                    </div>
-                </div>
-                <!-- Adicione mais blocos conforme necessário -->
+            <div class="responsible-group">
+                <label for="responsible">Responsável pela Medição:</label>
+                <input type="text" id="responsible" placeholder="Nome do Responsável">
             </div>
 
-            <!-- Secadores -->
-            <h2>Secadores</h2>
-            <div class="equipment-group">
-                <div class="equipment">
-                    <strong>Secador 1:</strong>
-                    <div class="input-group">
-                        <label>Pressão (bar):</label>
-                        <input type="number" class="pressure">
-                    </div>
-                    <div class="input-group">
-                        <label>Temperatura (°C):</label>
-                        <input type="number" class="temperature">
-                    </div>
-                    <div class="input-group">
-                        <label>Estado:</label>
-                        <select class="operation-select">
-                            <option value="parado">Parado</option>
-                            <option value="em operação">Em Operação</option>
-                        </select>
-                    </div>
-                </div>
-                <!-- Repita o bloco acima para o outro secador -->
+            <div class="equipment-selector">
+                <label for="equipment-select">Selecione o Equipamento:</label>
+                <select id="equipment-select" onchange="loadEquipmentData()">
+                    <option value="compressor1">Compressor: Atlas</option>
+                    <option value="compressor2">Compressor: Atlas 2</option>
+                    <option value="compressor3">Compressor: Schuz</option>
+                    <option value="compressor4">Compressor: Schuz 2</option>
+                    <option value="compressor5">Compressor: Interface</option>
+                    <option value="secador1">Secador: SCM</option>
+                    <option value="secador2">Secador: Schuz</option>
+                    <option value="pulmao1">Pulmão: vaso de presao 1</option>
+                    <option value="pulmao2">Pulmão: vaso de presao 2</option>
+                    <option value="pulmao3">Pulmão: vaso de presao 3</option>
+                    <option value="pulmao4">Pulmão: vaso de presao 4</option>
+                </select>
             </div>
 
-            <!-- Pulmões -->
-            <h2>Pulmões</h2>
-            <div class="equipment-group">
-                <div class="equipment">
-                    <strong>Pulmão 1:</strong>
-                    <div class="input-group">
-                        <label>Pressão (bar):</label>
-                        <input type="number" class="pressure">
-                    </div>
-                    <div class="input-group">
-                        <label>Temperatura (°C):</label>
-                        <input type="number" class="temperature">
-                    </div>
-                    <div class="input-group">
-                        <label>Estado:</label>
-                        <select class="operation-select">
-                            <option value="parado">Parado</option>
-                            <option value="em operação">Em Operação</option>
-                        </select>
-                    </div>
+            <div class="equipment-details">
+                <div class="input-group">
+                    <label>Pressão (bar):</label>
+                    <input type="number" id="pressure" oninput="saveEquipmentData()">
                 </div>
-                <!-- Repita o bloco acima para os outros pulmões -->
+                <div class="input-group">
+                    <label>Temperatura (°C):</label>
+                    <input type="number" id="temperature" oninput="saveEquipmentData()">
+                </div>
+                <div class="input-group">
+                    <label>Estado:</label>
+                    <select id="operation-select" onchange="saveEquipmentData()">
+                        <option value="parado">Parado</option>
+                        <option value="em operação">Em Operação</option>
+                    </select>
+                </div>
             </div>
 
             <div class="controls">
