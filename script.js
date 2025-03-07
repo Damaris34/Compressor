@@ -5,11 +5,10 @@ function updateDateTime() {
     document.getElementById('datetime').textContent = formattedDateTime;
 }
 
-// Função para atualizar o status do compressor
-function updateCompressorStatus() {
-    const compressorCheck = document.getElementById('compressor-check').checked;
-    const compressorStatus = document.getElementById('compressor-status');
-    compressorStatus.textContent = compressorCheck ? 'Ligado' : 'Desligado';
+// Função para salvar como PDF (simulação)
+function saveAsPDF() {
+    alert('Salvando como PDF...');
+    // Aqui você pode implementar a lógica para gerar um PDF usando uma biblioteca como jsPDF
 }
 
 // Atualizar a data e hora imediatamente ao carregar a página
