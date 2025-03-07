@@ -12,8 +12,5 @@ function updateCompressorStatus() {
     compressorStatus.textContent = compressorCheck ? 'Ligado' : 'Desligado';
 }
 
-// Atualizar a data e hora a cada segundo
-setInterval(updateDateTime, 1000);
-
 // Atualizar a data e hora imediatamente ao carregar a página
 updateDateTime();
