@@ -14,7 +14,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 300px;
+    width: 350px;
 }
 
 h1 {
@@ -27,17 +27,34 @@ h1 {
     color: #555;
 }
 
-.report .controls {
-    margin-top: 20px;
+.input-group {
+    margin: 15px 0;
+    text-align: left;
 }
 
-.report .controls label {
+.input-group label {
     font-weight: bold;
     margin-right: 10px;
 }
 
-.report .controls input,
-.report .controls button {
+.input-group input {
+    padding: 5px;
+    width: calc(100% - 120px);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+.controls label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.controls input,
+.controls button {
     margin: 5px;
     padding: 5px 10px;
     border: 1px solid #ccc;
@@ -45,12 +62,12 @@ h1 {
     background-color: #f9f9f9;
 }
 
-.report .controls button {
+.controls button {
     background-color: #007BFF;
     color: white;
     cursor: pointer;
 }
 
-.report .controls button:hover {
+.controls button:hover {
     background-color: #0056b3;
 }
