@@ -11,7 +11,14 @@
         <h1>Monitoramento de Equipamento</h1>
         <div class="report">
             <p><strong>Data/Horário:</strong> <span id="datetime">07/03/2025, 15:16:57</span></p>
-            <p><strong>Temperatura:</strong> <span id="temperature">29</span> °C</p>
+            <div class="input-group">
+                <label for="pressure">Pressão (bar):</label>
+                <input type="number" id="pressure" placeholder="Insira a pressão">
+            </div>
+            <div class="input-group">
+                <label for="temperature">Temperatura (°C):</label>
+                <input type="number" id="temperature" placeholder="Insira a temperatura">
+            </div>
             <p><strong>Compressor:</strong> <span id="compressor-status">Desligado</span></p>
             <p><strong>Responsável:</strong> <span id="responsible">Não definido</span></p>
             <div class="controls">
