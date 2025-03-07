@@ -1,16 +1,27 @@
-Faça a estrutura em html,java e css com as informações abaixo
-Data/ Horário 
-Pressão/ Temperatura e se o Compressor está em funcionamento 
-Compressores 
-1 Altas 
-1 Atlas
-1 Schuz
-1 Schuz 
-1 Interface 
-Secadores
-1 SCM
-1Schuz 
-Pulmões 
-Responsável 
-Gere o arquivo em PDF
-Com o adicionamento de fotos para melhor a entrega do documento 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento de Equipamento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Monitoramento de Equipamento</h1>
+        <div class="info">
+            <p>Data/Horário: <span id="datetime"></span></p>
+            <p>Pressão: <span id="pressure">0</span> bar</p>
+            <p>Temperatura: <span id="temperature">0</span> °C</p>
+            <p>Compressor: <span id="compressor-status">Desligado</span></p>
+            <p>Responsável: <span id="responsible">Não definido</span></p>
+        </div>
+        <div class="controls">
+            <label for="compressor-check">Verificar Compressor:</label>
+            <input type="checkbox" id="compressor-check">
+            <button onclick="updateCompressorStatus()">Atualizar Status</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
