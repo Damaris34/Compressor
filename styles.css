@@ -14,10 +14,10 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 350px;
+    width: 600px;
 }
 
-h1 {
+h1, h2 {
     color: #333;
 }
 
@@ -27,19 +27,19 @@ h1 {
     color: #555;
 }
 
-.input-group {
-    margin: 15px 0;
+.equipment-group {
+    margin-bottom: 20px;
+}
+
+.equipment {
+    margin: 5px 0;
     text-align: left;
 }
 
-.input-group label {
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-.input-group input {
+.equipment input {
     padding: 5px;
-    width: calc(100% - 120px);
+    width: 50px;
+    margin: 0 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -48,26 +48,32 @@ h1 {
     margin-top: 20px;
 }
 
-.controls label {
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-.controls input,
 .controls button {
-    margin: 5px;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border: none;
     border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-.controls button {
     background-color: #007BFF;
     color: white;
     cursor: pointer;
+    margin-right: 10px;
 }
 
 .controls button:hover {
+    background-color: #0056b3;
+}
+
+.controls input[type="file"] {
+    display: none;
+}
+
+.controls label {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.controls label:hover {
     background-color: #0056b3;
 }
