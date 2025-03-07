@@ -10,7 +10,7 @@
     <div class="container">
         <h1>Monitoramento de Equipamento</h1>
         <div class="report">
-            <p><strong>Data/Horário:</strong> <span id="datetime">07/03/2025, 15:16:57</span></p>
+            <p><strong>Data/Horário:</strong> <span id="datetime"></span></p>
             <div class="responsible-group">
                 <label for="responsible">Responsável pela Medição:</label>
                 <input type="text" id="responsible" placeholder="Nome do Responsável">
@@ -52,9 +52,9 @@
             </div>
 
             <div class="controls">
-                <button onclick="saveAsPDF()">Salvar como PDF</button>
                 <input type="file" id="photoInput" accept="image/*">
                 <label for="photoInput">Adicionar Foto</label>
+                <button onclick="generateCompletePDF()">Gerar PDF Completo</button>
             </div>
         </div>
     </div>
