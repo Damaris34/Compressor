@@ -1,3 +1,16 @@
+document.getElementById('photoInput').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const img = document.getElementById('photoDisplay');
+            img.src = e.target.result;
+            img.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
 // Função para atualizar a data e hora
 function updateDateTime() {
     const now = new Date();
@@ -40,11 +53,35 @@ function loadEquipmentData() {
     }
 }
 
-// Função para gerar PDF completo (simulação)
-function generateCompletePDF() {
-    alert('Gerando PDF completo...');
-    // Aqui você pode implementar a lógica para gerar um PDF usando uma biblioteca como jsPDF
-    // Recupere todos os dados do localStorage e gere o PDF
+// Função para gerar PDF completo
+async function generateCompletePDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Adicionar dados do equipamento ao PDF
+    const existingData = JSON.parse(localStorage.getItem('equipmentData')) || {};
+    let yOffset = 20;
+
+    for (const [key, value] of Object.entries(existingData)) {
+        doc.text(`Equipamento: ${key}`, 10, yOffset);
+        doc.text(`Pressão: ${value.pressure} bar`, 10, yOffset + 10);
+        doc.text(`Temperatura: ${value.temperature} °C`, 10, yOffset + 20);
+        doc.text(`Estado: ${value.operation}`, 10, yOffset + 30);
+        doc.text(`Responsável: ${value.responsible}`, 10, yOffset + 40);
+        doc.text(`Data/Horário: ${value.datetime}`, 10, yOffset + 50);
+        yOffset += 60;
+    }
+
+    // Adicionar foto ao PDF
+    const imgElement = document.getElementById('photoDisplay');
+    if (imgElement.src) {
+        const canvas = await html2canvas(imgElement);
+        const imgData = canvas.toDataURL('image/png');
+        doc.addImage(imgData, 'PNG', 10, yOffset, 180, (180 * canvas.height) / canvas.width);
+    }
+
+    // Salvar o PDF
+    doc.save('relatorio_equipamentos.pdf');
 }
 
 // Atualizar a data e hora imediatamente ao carregar a página
