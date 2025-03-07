@@ -36,12 +36,16 @@ h1, h2 {
     text-align: left;
 }
 
-.equipment input {
+.equipment input[type="number"] {
     padding: 5px;
     width: 50px;
     margin: 0 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+.equipment label {
+    margin-left: 10px;
 }
 
 .controls {
